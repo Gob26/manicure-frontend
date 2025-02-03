@@ -1,17 +1,12 @@
+// src/store/index.ts
 import { configureStore } from '@reduxjs/toolkit';
-import { authSlice } from '../../entities/auth/authSlice';
-import { citySlice } from '../../entities/city/citySlice';
-import { mastersSlice } from '../../entities/masters/mastersSlice';
-import { salonsSlice } from '../../entities/salons/salonsSlice';
+import cityReducer from '../entities/city/citySlice';
 
-// Настройка store
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    auth: authSlice.reducer,
-    city: citySlice.reducer,
-    masters: mastersSlice.reducer,
-    salons: salonsSlice.reducer,
+    city: cityReducer,
   },
 });
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

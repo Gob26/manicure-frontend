@@ -1,0 +1,68 @@
+/* src/shared/styles/index.css */
+
+/* Светлая тема (по умолчанию) */
+:root {
+  /* Основные цвета */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  
+  /* Основной (главный) розовый цвет для светлой темы */
+  --primary-color: #ff69b4;         /* HotPink */
+  --primary-hover-color: #ff85c1;     /* Более светлый розовый */
+
+  /* Цвета ссылок */
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-hover-color);
+  
+  /* Дополнительные переменные (если необходимо) */
+  --accent-color: #ff85c1;
+}
+
+/* Тёмная тема */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  
+  /* Основной бирюзовый цвет для тёмной темы */
+  --primary-color: #40e0d0;         /* Turquoise */
+  --primary-hover-color: #48f0e8;     /* Более светлый бирюзовый */
+
+  /* Цвета ссылок */
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-hover-color);
+  
+  --accent-color: #48f0e8;
+}
+
+/* Применяем переменные к базовым элементам */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Стили для ссылок */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Пример использования переменной primary-color для кнопок */
+button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* Дополнительные базовые стили, если необходимо */
